@@ -4,6 +4,11 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def new
+    @event = Event.new
+  end
+
+
   def create
     @event.user = current_user
     @event = Event.new(event_params)

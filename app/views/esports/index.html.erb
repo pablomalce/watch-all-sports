@@ -22,7 +22,7 @@
                           <td><%= event.player_id%></td>
                           <td><%= event.player_name%></td>
                           <td>
-                            <%= form_for event do |f|  %>
+                            <%= form_for event, remote: true do |f|  %>
                             <%= f.hidden_field :event_id %>
                             <%= f.hidden_field :player_id %>
                             <%= f.hidden_field :player_name %>

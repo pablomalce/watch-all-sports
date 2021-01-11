@@ -23,7 +23,7 @@
                           <%= f.hidden_field :event_id %>
                           <%= f.hidden_field :player_id %>
                           <%= f.hidden_field :player_name %>
-                          <%= link_to "Delete", event_path(event.id),method: :delete, data: { confirm: "Are you sure?" } %>
+                          <%= link_to "Delete", event_paths,method: :delete, data: { confirm: "Are you sure?" } %>
                           <% end %>
                         </td>
                       </tr>

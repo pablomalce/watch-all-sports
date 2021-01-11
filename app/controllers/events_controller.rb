@@ -4,17 +4,22 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def show
+    @event = Event.find(params[:id])
+    redirect_to events_path
+  end
+
   def new
     @event = Event.new
   end
 
 
   def create
-    @event.user = current_user
     @event = Event.new(event_params)
+    @event.user = current_user
     if @event.save!
       flash[:success] = 'Success'
-      redirect_to esport_path
+      redirect_to esports_path
     else
       flash[:error] = 'Fail'
     end
@@ -23,7 +28,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to event_path
+    redirect_to events_path
   end
 
   private

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'index', to: 'esports#index', as: :esport
+  resources :events, only: %i[index create destroy]
+  get 'users/:id', to: 'users#show', as: :user
 end
+

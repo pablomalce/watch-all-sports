@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="row col-12 justify-content-center">
+    <div class="text-center  border border-ligth w-100  shadow-sm p-3 mb-5 bg-white rounded ">
+      <h1>Mis eventos</h1>
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">EventId</th>
+                <th scope="col">PlayerId</th>
+                <th scope="col">PlayerName</th>
+              </tr>
+              </thead>
+              <tbody>
+                  <% @events.each do |event| %>
+                    <tr>
+                        <td><%= event.event_id%></td>
+                        <td><%= event.player_id%></td>
+                        <td><%= event.player_name%></td>
+                        <td>
+                          <%= form_for event_path(:id), remote: true do |f|  %>
+                          <%= f.hidden_field :event_id %>
+                          <%= f.hidden_field :player_id %>
+                          <%= f.hidden_field :player_name %>
+                          <%= link_to "Delete",event_path(:id),method: :delete, data: { confirm: "Are you sure?" } %>
+                          <% end %>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </th>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      <%= link_to "Volver", esport_path, class: "btn btn-success" %>
+    <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+  </div>
+</div>

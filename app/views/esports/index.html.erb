@@ -1,0 +1,43 @@
+
+<div class="container">
+  <div class="row col-12 justify-content-center">
+    <div class="text-center  border border-ligth w-100  shadow-sm p-3 mb-5 bg-white rounded ">
+      <h1>Lista de eventos</h1>
+        <div class="table-responsive">
+          <table class="table">
+            <div class="sticky-top">
+              <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">EventId</th>
+                    <th scope="col">PlayerId</th>
+                    <th scope="col">PlayerName</th>
+                    <th><%= link_to "Mi lista", events_path, class: "btn btn-success" %></th>
+                  </tr>
+                </thead>
+                  </div>
+                    <tbody>
+                    <% @events.each do |event| %>
+                    <tr>
+                          <td><%= event.event_id%></td>
+                          <td><%= event.player_id%></td>
+                          <td><%= event.player_name%></td>
+                          <td>
+                            <%= form_for event do |f|  %>
+                            <%= f.hidden_field :event_id %>
+                            <%= f.hidden_field :player_id %>
+                            <%= f.hidden_field :player_name %>
+                            <%= f.submit "Guardar", class: "btn btn-info" %>
+                            <% end %>
+                          </td>
+                      </tr>
+                    <% end %>
+
+                    </ul>
+                  </nav>
+                </th>
+              </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+</div>

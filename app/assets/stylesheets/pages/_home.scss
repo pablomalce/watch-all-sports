@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+
+.img1 {
+  width: 30%;
+  height: auto;
+  margin-bottom: 30px;
+}
+@media (max-width: 576px) {
+.img1 {
+  width:40%;
+}
+}

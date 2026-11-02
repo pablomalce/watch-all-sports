@@ -12,7 +12,7 @@ Learning project built over three days in January 2021 (9 commits, 9 to 11 Jan).
 - `/esports` calls the iSports football events endpoint and lists each event's id, player id and player name.
 - A "Guardar" (save) button stores an event against the current user; `/events` shows the saved list with a delete action.
 
-Not finished: `/events` lists every saved event (`Event.all`), not just the current user's; `events#show` redirects to the index; the generated test files are empty.
+Not finished: `/events` lists every saved event (`Event.all`) and any signed-in user can delete any event, since neither action is scoped to the current user; `events#show` redirects to the index; the generated test files are empty.
 
 ## Stack
 
